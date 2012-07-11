@@ -1,0 +1,9 @@
+name: stackato-worker
+
+framework:
+  type: standalone
+
+processes:
+  web: ruby worker.rb
+
+ignores: [".git"]
