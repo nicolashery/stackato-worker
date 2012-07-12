@@ -7,5 +7,5 @@ processes:
   web: while true; do nc -l $PORT -q 1 < README.md; done
 hooks:
    pre-running:
-   - /usr/bin/ruby worker.rb
+   - /usr/bin/ruby worker.rb &
 ignores: [".git"]
