@@ -1,6 +1,7 @@
-i = 1
 loop do
-  puts "Working.. #{i}"
+  File.open('log.txt', 'a') do |f|
+    f.puts "Working.. #{i}"
+  end
   i = i + 1
   sleep 5
 end
