@@ -1,0 +1,14 @@
+---
+applications:
+.:
+name: stackato-worker
+framework:
+  name: standalone
+  info:
+     description: Standalone Application
+     mem: 128M
+runtime: ruby18
+command: ruby worker.rb
+url:
+mem: 128M
+instances: 1
