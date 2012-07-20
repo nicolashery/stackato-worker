@@ -1,0 +1,50 @@
+Starting Application [stackato-worker]: ..........................
+Error: Application [stackato-worker] failed to start, logs information below.
+
+====> /logs/stderr.log <====
+/opt/rubies/1.9.3-p125/lib/ruby/site_ruby/1.9.1/rubygems/custom_require.rb:36:in `require': cannot load such file -- stdsync (LoadError)
+	from /opt/rubies/1.9.3-p125/lib/ruby/site_ruby/1.9.1/rubygems/custom_require.rb:36:in `require'
+Use of uninitialized value $uri in concatenation (.) or string at /app/runtime-helper.pl line 66.
+Use of uninitialized value $uri in concatenation (.) or string at /app/runtime-helper.pl line 66.
+
+====> /logs/stdout.log <====
+No Redis service bound to app.  Skipping auto-reconfiguration.
+No Mongo service bound to app.  Skipping auto-reconfiguration.
+No MySQL service bound to app.  Skipping auto-reconfiguration.
+No PostgreSQL service bound to app.  Skipping auto-reconfiguration.
+No RabbitMQ service bound to app.  Skipping auto-reconfiguration.
+No Redis service bound to app.  Skipping auto-reconfiguration.
+No Mongo service bound to app.  Skipping auto-reconfiguration.
+No MySQL service bound to app.  Skipping auto-reconfiguration.
+No PostgreSQL service bound to app.  Skipping auto-reconfiguration.
+No RabbitMQ service bound to app.  Skipping auto-reconfiguration.
+Working.. 1
+Working.. 2
+Working.. 3
+Working.. 4
+Working.. 5
+Working.. 6
+Working.. 7
+Working.. 8
+Working.. 9
+Working.. 10
+Working.. 11
+Working.. 12
+Working.. 13
+Working.. 14
+Working.. 15
+Working.. 16
+Working.. 17
+Working.. 18
+Working.. 19
+Working.. 20
+Working.. 21
+Working.. 22
+Working.. 23
+Working.. 24
+Working.. 25
+Working.. 26
+Working.. 27
+Working.. 28
+Working.. 29
+

@@ -1,11 +1,7 @@
 name: stackato-worker
+instances: 1
 framework:
-  type: generic
-# Needed by stackato. Container needs to respond to web request to appear
-# alive. We serve the README file, since it is already available.
-processes:
-  web: while true; do nc -l $PORT -q 1 < README.md; done
-hooks:
-   pre-running:
-   - /usr/bin/ruby worker.rb &
-ignores: [".git"]
+  type: standalone
+  runtime: ruby18
+command: ruby worker.rb
+mem: 128
