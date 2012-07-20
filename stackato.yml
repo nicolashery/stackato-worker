@@ -5,3 +5,4 @@ framework:
   runtime: ruby18
 command: ruby worker.rb
 mem: 128
+ignores: [".git"]
