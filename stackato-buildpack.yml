@@ -1,0 +1,7 @@
+name: stackato-worker
+instances: 1
+framework:
+    type: buildpack
+env:
+    BUILDPACK_URL: git://github.com/jruby/heroku-buildpack-jruby
+mem: 128
