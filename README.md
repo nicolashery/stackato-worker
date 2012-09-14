@@ -8,11 +8,11 @@ Worker processes on  [Heroku](http://www.heroku.com/) are easy, just add a `Proc
 
 I wish they worked fine on Stackato. I like Stackato's approach of targeting enterprise private PaaS, and I believe many businesses have apps that are not web apps, just long-running processes.
 
-Everything here was tested with a local **Stackato Micro Cloud v2.2.7** and the **Stackato Client v1.4.4**.
+Everything here was tested with a local **Stackato Micro Cloud v2.2.1** and the **Stackato Client v1.4.4**.
 
 I will also add that standalone apps (what Heroku calls "worker") are supported in Cloud Foundry since June 2012, see this blog post: [http://blog.cloudfoundry.com/2012/05/01/cloud-foundry-improves-support-for-background-processing/](http://blog.cloudfoundry.com/2012/05/01/cloud-foundry-improves-support-for-background-processing/)
 
-In Stackato 2.2.7, they are still not fully supported, although the `standalone` framework exists. I will detail below the issues I found:
+In Stackato 2.2.1, they are still not fully supported, although the `standalone` framework exists. I will detail below the issues I found:
 
 - **Issue 1**: Standalone process launches, but Stackato says the app "failed to start"
 - **Issue 2**: Standalone framework does not work for Ruby 1.9
