@@ -35,7 +35,48 @@ To this day, only **Issue 3** remains unresolved (see the bottom of this documen
     2012-11-05T13:26:34-0500 staging jruby: No such file or directory -- bin (LoadError)
     2012-11-05T13:26:35-0500 staging  !      Procfile must contain a 'web' entry
 
-## Description
+In the meantime, I've found the following solution:
+
+## Deploying a JRuby worker as a Java worker
+
+In order to deploy a JRuby worker on Stackato, I can't use the Heroku JRuby Buildpack as described above, so I used the Java standalone framework (see the `stackato-jruby.yml` file).
+
+For this to work, you need to copy the `jruby.jar` file from the `$JRUBY_HOME/lib` directory into the project directory (I also add it to `.gitignore` since this is a big file). Then run:
+
+    $ stackato push stackato-worker
+    Would you like to deploy from the current directory ?  [Yn]:
+    Detected a Standalone application, is this correct ?  [Yn]:
+    Framework:       standalone
+    What runtime?
+    1. erlangR14B02
+    2. java
+    3. node
+    4. perl514
+    5. php
+    6. python27
+    7. python32
+    8. ruby18
+    9. ruby19
+    Select Runtime: 2
+    Runtime:         Java 6
+    Start command: java -jar jruby.jar worker.rb
+    Command:         java -jar jruby.jar worker.rb
+    Enter Memory Reservation [512M]:
+    Creating Application [stackato-worker]: OK
+    Create services to bind to 'stackato-worker' ?  [yN]:
+    Would you like to save this configuration? [yN]: y
+    Uploading Application [stackato-worker]:
+      Checking for bad links:  OK
+      Copying to temp space:  OK
+      Checking for available resources:  OK
+      Processing resources: OK
+      Packing application: OK
+      Uploading (446):  OK
+    Push Status: OK
+    Staging Application [stackato-worker]: OK
+    Starting Application [stackato-worker]: ..........OK
+
+## Description of original problem
 
 This is a dummy worker process I'm trying to get working on [Stackato](http://www.activestate.com/stackato).
 
