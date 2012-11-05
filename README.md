@@ -1,5 +1,42 @@
 # Stackato Worker
 
+## Update 2012-11-05
+
+This has been tested on **Stackato Micro Cloud v2.4.3** and the **Stackato Client v1.5**.
+
+- **Issue 1 (resolved)**: Standalone process launches, but Stackato says the app "failed to start"
+- **Issue 2 (resolved)**: Standalone framework does not work for Ruby 1.9
+- **Issue 3**: Using a Heroku buildpack does not allow for `worker` process in `Procfile`
+
+Thanks a lot to the Stackato team for working to enable the `standalone` framework.
+
+To this day, only **Issue 3** remains unresolved (see the bottom of this document for details), which means this example app can't be used with JRuby for instance. Hopefully one day this will be fixed?
+    
+    Staging Application [stackato-worker]: Failed to stage application:
+     staging plugin exited with non-zero exit code.
+
+    $ stackato logs
+    2012-11-05T13:25:32-0500 staging
+    2012-11-05T13:25:32-0500 staging -----> Stackato receiving staging request
+    2012-11-05T13:25:33-0500 staging -----> JRuby app detected
+    2012-11-05T13:25:33-0500 staging -----> Downloading and unpacking JRuby
+    2012-11-05T13:25:38-0500 staging -----> Installing JRuby-OpenSSL, Bundler and Rake
+    2012-11-05T13:26:05-0500 staging        Successfully installed bouncy-castle-java-1.5.0146.1
+    2012-11-05T13:26:05-0500 staging        Successfully installed jruby-openssl-0.7.7
+    2012-11-05T13:26:08-0500 staging        Successfully installed bundler-1.2.1
+    2012-11-05T13:26:09-0500 staging        Successfully installed rake-0.9.2.2
+    2012-11-05T13:26:09-0500 staging        4 gems installed
+    2012-11-05T13:26:09-0500 staging -----> Vendoring JRuby into slug
+    2012-11-05T13:26:10-0500 staging -----> Installing dependencies with Bundler
+    2012-11-05T13:26:29-0500 staging        The Gemfile specifies no dependencies
+    2012-11-05T13:26:29-0500 staging        Your bundle is complete! It was installed into ./vendor/bundle
+    2012-11-05T13:26:29-0500 staging        Dependencies installed
+    2012-11-05T13:26:29-0500 staging -----> Writing config/database.yml to read from DATABASE_URL
+    2012-11-05T13:26:34-0500 staging jruby: No such file or directory -- bin (LoadError)
+    2012-11-05T13:26:35-0500 staging  !      Procfile must contain a 'web' entry
+
+## Description
+
 This is a dummy worker process I'm trying to get working on [Stackato](http://www.activestate.com/stackato).
 
 Worker processes on  [Heroku](http://www.heroku.com/) are easy, just add a `Procfile` containing:

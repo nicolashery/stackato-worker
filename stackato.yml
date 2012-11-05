@@ -2,6 +2,6 @@ name: stackato-worker
 instances: 1
 framework:
   type: standalone
-  runtime: ruby18
+  runtime: ruby19
 command: ruby worker.rb
 mem: 128
