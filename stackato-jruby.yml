@@ -1,7 +1,0 @@
-name: stackato-worker
-instances: 1
-framework:
-  type: standalone
-  runtime: java
-command: java -jar jruby.jar worker.rb
-mem: 512
